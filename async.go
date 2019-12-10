@@ -63,6 +63,7 @@ func (task *Task) Await() (res TaskResult) {
 		res = r
 	})
 	wg.Wait()
+
 	return
 }
 
@@ -113,5 +114,6 @@ func (taskset *Taskset) AwaitAll() (results []TaskResult) {
 		}(taskset.tasks[idx], idx)
 	}
 	wg.Wait()
+
 	return
 }
